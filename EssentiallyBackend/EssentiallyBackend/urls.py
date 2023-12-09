@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from EsseantiallyApp import views
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("api/stocks/<int:n>", views.fetch_stocks, name="fetch_stocks"),
+    path("api/stocks", views.update_prices, name="update_prices"),
 ]
